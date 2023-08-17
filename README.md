@@ -7,7 +7,7 @@ This project targets edtech domain and was build to help school teachers in fram
 <h1 align="center">MCQ GENERATION</h1>
 The complete pipeline for MCQ type question generation is shown below
 
-![MCQ generation pipeline](https://github.com/vaibhav174/MCQ-and-T-F-question-generation/blob/main/images/MCQ_pipline.png)
+<center><img src="https://github.com/vaibhav174/MCQ-and-T-F-question-generation/blob/main/images/MCQ_pipline.png" style="border:2px solid black;"></center>
 
 <ul>
 	<li>The input text might be very big and not every sentence in the text might be important enough to build a question from. Therefore we first perform abstractive text summarization to not only reduce the text size but also to extract all the important information from the text.</li>
