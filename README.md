@@ -18,6 +18,14 @@ The complete pipeline for MCQ type question generation is shown below
 	<li>Putting genetated question along with correct choice and distractors to create a complete MCQ.</li>
 </ul>
 
+Image below shows a test run of our pipeline on a given sentence.
+<center><img src="https://github.com/vaibhav174/MCQ-and-T-F-question-generation/blob/main/images/MCQ_output.png"></center>
+<h1 align="center">Fill in the blanks Generation</h1>
+<p>Fill in the blanks can be generated using the same pipeline as MCQ generation. Once the keywords are identified, we simply replace the keyword with a blank. The final sentence than become Fill in the blank type question. </p>
+<h1 align="center">T/F Generation</h1>
+<p>For True/False type questions, we already have the true statements from the text. The main challenge is to look for ways to generate false statements. Simplest way to generate false statement is to replace the keyword in the sentnce by its WordNet co-hypernyms. Eventhough this approach generates good false statements but there is a better way to generate false statements whose truthfulness is harder to predict.</p>
+<p>The method is that instead of replacing keyword we replace the whole Verb phrase or Noun phrase in the sentence. We use constituency parsing to find verb or noun phrase present at the end of the text. We remove this phrase from the text.</p>
+<p>Then we use text generation models like GPT3 to complete the half sentence. These new generated sentences are most likely to be different from original sentence. Still for the sake of completeness we generate multiple sentences and pick the best possible one based on its dis-similarity from the original text. </p>
 
  With the trained models in the correct folders run each notebook cell by cell to see the working of the whole idea. Details about each part of the pipeline is present in the notebook or at https://vaibhav174.github.io/question_gen.html
 
