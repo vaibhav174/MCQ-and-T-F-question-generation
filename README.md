@@ -1,6 +1,6 @@
 # MCQ-and-T-F-question-generation
  Generating MCQ and True/False type questions using state of the art deep learning techniques
- If you require models that I trained please mail me at vaibhav.jain174@gmail.com.
+ If you require models that I trained please mail me at vaibhav.jain174@gmail.com. With the trained models in the correct folders run each notebook cell by cell to see the working of the whole idea. 
 
 This project targets edtech domain and was build to help school teachers in framing test questions. The idea is to build an end to end pipelines that takes any text as input and generate different types of question from it. Currently our pipeline can generate MCQ's, True/False and Fill in the blank type questions. We are working towards fine tuning our pipeline to be also able to generate general text to text questions.
 
@@ -26,7 +26,5 @@ Image below shows a test run of our pipeline on a given sentence.
 <p>For True/False type questions, we already have the true statements from the text. The main challenge is to look for ways to generate false statements. Simplest way to generate false statement is to replace the keyword in the sentnce by its WordNet co-hypernyms. Eventhough this approach generates good false statements but there is a better way to generate false statements whose truthfulness is harder to predict.</p>
 <p>The method is that instead of replacing keyword we replace the whole Verb phrase or Noun phrase in the sentence. We use constituency parsing to find verb or noun phrase present at the end of the text. We remove this phrase from the text.</p>
 <p>Then we use text generation models like GPT3 to complete the half sentence. These new generated sentences are most likely to be different from original sentence. Still for the sake of completeness we generate multiple sentences and pick the best possible one based on its dis-similarity from the original text. </p>
-
- With the trained models in the correct folders run each notebook cell by cell to see the working of the whole idea. Details about each part of the pipeline is present in the notebook or at https://vaibhav174.github.io/question_gen.html
 
  
